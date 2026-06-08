@@ -30,7 +30,7 @@ def stress_calculator(stress_tensor):
     principal_stresses = np.sort(principal_stresses)[::-1]
 
     '''
-    np.linalg.eigvalsh => 이 함수의 출력은 NumPy 배열(ndarray)라는 형태이다. 
+    np.linalg.eigvalsh => 이 함수의 출력은 NumPy 배열(ndarray)라는 형태이다.
     만약 내장함수 sorted()를 사용하게 되면, 일반 파이썬 리스트로 변경된다.
     하지만, np.sort를 사용할 때에는 결과물을 계속 ndarray로 유지할 수 있다.
     추가로 파이썬 내장 함수보다 C언어 기반으로 최적화된 np.sort가 속도가 더 빠르다.
