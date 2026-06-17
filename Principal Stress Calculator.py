@@ -1,9 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import platform
 
-plt.rcParams['font.family'] = 'Malgun Gothic'
+os_name = platform.system()
+if os_name == 'Windows':
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+elif os_name == 'Darwin': # Mac OS를 의미합니다.
+    plt.rcParams['font.family'] = 'AppleGothic'
+else: # Linux 등 기타 OS (예: Google Colab 환경 등)
+    plt.rcParams['font.family'] = 'NanumGothic'
+
 # 그래프의 폰트를 윈도우 OS의 기본 한글 폰트인 맑은 고딕으로 변경하는 코드.
 # marplotlib이 기본적으로 사용하는 DejaVu Sans는 영문 전용이라 한글문자를 인식하지 못함.
+
+
 plt.rcParams['axes.unicode_minus'] = False
 # 그래프에 축에 음수값이 표시될 때, 기본 유니코드 마이너스 기호 대신 
 # 일반적인 키보드의 하이픈-마이너스를 사용하도록 설정
